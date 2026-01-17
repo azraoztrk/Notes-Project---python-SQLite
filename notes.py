@@ -1,4 +1,6 @@
 import json
+import re
+from datetime import datetime
  
 try:
     with open("notesList.json", "r") as file:
@@ -10,7 +12,8 @@ print("--🎀 Welcome to Notes App 🎯--")
 print("1-Add Note ➕ ")
 print("2-List The Notes 🗒️")
 print("3-Delete Note 🗑️")
-print("4-Exit 👋")
+print("4-Search Notes 🔍")
+print("5-Exit 👋")
 
 while True:
     try:
@@ -21,7 +24,9 @@ while True:
 
     if userInput == 1:
         textInput = input("\nEnter note: \n")
-        notesList.append(textInput)
+        now = datetime.now()
+        today = now.strftime("%Y-%m-%d")
+        notesList.append(f"{today}: {textInput}")
 
     elif userInput == 2:
         if not notesList:
@@ -36,6 +41,16 @@ while True:
         print("\nNote deleted succesfully!\n")
 
     elif userInput == 4:
+        searchInput = input("Enter keyword to search: ")
+        found = False
+        for index, note in enumerate(notesList):
+            if re.search(searchInput, note, re.IGNORECASE):
+                print(f"{index + 1}: {note}")
+                found = True
+        if not found:
+            print("No notes found with keyword " + searchInput)
+
+    elif userInput == 5:
         with open("notesList.json", "w") as file:
             json.dump(notesList, file)
         print("\nThanks for using Notes App. Goodbye👋")
