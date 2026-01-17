@@ -17,7 +17,7 @@ print("5-Exit 👋")
 
 while True:
     try:
-        userInput = int(input("Please choose one of the options(1-4): "))
+        userInput = int(input("Please choose one of the options(1-5): "))
     except ValueError:
         print("Invalid option. Please enter a valid option!")
         continue
