@@ -1,22 +1,28 @@
 # Notes App
 
-A simple Python Notes Application that allows users to easily manage their personal notes. 
-This application provides a straightforward interface to add, view, and delete notes. 
-All notes are saved in a local JSON file, ensuring that your data is persistent even after closing the program.
+A simple Python Notes Application to add, list, delete, and search notes.  
+Each note is automatically tagged with the date it was created.  
 
 ## Features
 
-- Add notes quickly and easily.
-- List all your notes with numbering.
-- Delete notes by specifying the number.
-- Notes are saved automatically in a JSON file.
+- ➕ **Add Note:** Add a new note with the current date automatically included.
+- 🗒️ **List Notes:** View all notes with their creation dates.
+- 🗑️ **Delete Note:** Remove any note by choosing its number.
+- 🔍 **Search Notes:** Search notes by keyword (case-insensitive) using regex.
+- ✅ **Persistent Storage:** All notes are saved to `notesList.json` automatically.
 
-## Usage
+## How to Use
 
-1. Run the Python script.
-2. Choose an option from the menu:
-   - Add Note
-   - List Notes
-   - Delete Note
-   - Exit
-3. When you exit, all notes are saved automatically.
+1. Run the program: `python notesApp.py`
+2. Follow the menu options:
+   - 1: Add Note
+   - 2: List Notes
+   - 3: Delete Note
+   - 4: Search Notes
+   - 5: Exit
+
+All changes are saved automatically to `notesList.json`.
+
+## Requirements
+
+- Python 3.x
