@@ -26,7 +26,7 @@ Originally using JSON for storage, this project was later migrated to **SQLite**
 ## 📂 Project Structure
 
 - notes.py # Main application
-─ notes.db # SQLite database (auto-created)
+─ notes.db # SQLite database 
 ─ README.md
 
 ---
